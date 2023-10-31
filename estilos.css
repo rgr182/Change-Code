@@ -1,0 +1,26 @@
+.titulo {
+  color: green;
+}
+
+.desc_perrrito {
+  color: rgb(241, 4, 51);
+}
+
+div {
+  background-color: green;
+}
+
+.mapa_prinicipal>p {
+  color: gold;
+}
+
+.mapa_prinicipal > h1 {
+  text-align: center;
+  color: rgb(115, 0, 255);
+  font-size: 64px;
+}
+
+.introduccion {
+  display: flex;
+  border: 5px solid blue;  
+}
