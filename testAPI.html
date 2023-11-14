@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llamada HTTP GET con Fetch</title>
+</head>
+<body>
+
+<script>
+    // URL del endpoint que deseas llamar
+    const apiUrl = 'https://localhost:7151/Api/Multiplicacion?a=12&b=2';
+
+    // Configuración para desactivar CORS (solo para propósitos de prueba, no se recomienda en producción)
+    const corsHeaders = new Headers({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+    });
+
+    // Opciones para la solicitud fetch
+    const fetchOptions = {
+        method: 'GET',
+        mode:  'no-cors', // Permite CORS
+        headers: corsHeaders,
+    };
+
+    // Realizar la llamada fetch
+    fetch(apiUrl, fetchOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Manejar la respuesta exitosa aquí
+            console.log('Respuesta exitosa:', data);
+        })
+        .catch(error => {
+            // Manejar errores aquí
+            console.error('Error en la solicitud:', error);
+        });
+</script>
+
+</body>
+</html>
